@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Messenger\MessageBusInterface;
 
-class SyncTaskCommand extends Command
+class TaskSyncCommand extends Command
 {
     protected static $defaultName = 'task:sync';
 
