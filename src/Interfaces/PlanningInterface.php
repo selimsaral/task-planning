@@ -4,5 +4,5 @@ namespace App\Interfaces;
 
 interface PlanningInterface
 {
-    public function planning($tasks, $developers): array;
+    public function planning(&$tasks, $developers): array;
 }

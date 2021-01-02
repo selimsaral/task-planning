@@ -6,7 +6,7 @@ use App\Interfaces\PlanningInterface;
 
 class TaskPlanning implements PlanningInterface
 {
-    public function planning($tasks, $developers): array
+    public function planning(&$tasks, $developers): array
     {
         $weeks = $this->getWeeks($tasks, $developers);
 
