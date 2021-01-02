@@ -23,14 +23,17 @@ final class SyncTaskHandler implements MessageHandlerInterface
          * @var TaskResponse $item
          */
         foreach ($message->getResult() as $item) {
-            $task = new Task();
-            $task->setName($item->getName());
-            $task->setComplexity($item->getComplexity());
-            $task->setDuration($item->getDuration());
-            $task->setProvider($item->getProvider());
+            $check = $this->em->getRepository(Task::class)->findOneBy(['name' => $item->getName()]);
+            if (!$check) {
+                $task = new Task();
+                $task->setName($item->getName());
+                $task->setComplexity($item->getComplexity());
+                $task->setDuration($item->getDuration());
+                $task->setProvider($item->getProvider());
 
-            $this->em->persist($task);
-            $this->em->flush();
+                $this->em->persist($task);
+                $this->em->flush();
+            }
         }
     }
 }
