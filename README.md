@@ -17,3 +17,9 @@ php bin/console task:sync
 Dashboard URL:
 .../dashboard
 ```
+
+```
+Run Test
+
+php bin/phpunit tests
+```
